@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        :root{
+            --a:red;
+
+        }
+  .a1{
+    margin: auto;
+    background: var(--a);
+    /* transform: rotate(-20deg); */
+    /* transform: scale(-2 ,-3); */
+    /* transform: scaley(0.5); */
+    /* transform: skew(20deg ,20deg); */
+    /* transition: width 2s , height 2s; */
+    border: 2-x solid black;
+    width: 200px;
+    /* animation: example 4s ; */
+    animation-name: example;
+    animation-duration: 4s;
+    position: relative;
+
+  }
+  @keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+ /* .a1:hover{ */
+    width: 500px;
+    height: 600px;
+ }
+    </style>
+</head>
+<body>
+    <div class="a1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas distinctio, voluptatum corrupti labore ipsam perspiciatis quos doloremque quam eum. Sint quod laudantium nesciunt. Earum temporibus corporis id delectus molestiae. Minus.</div>
+</body>
+</html>
