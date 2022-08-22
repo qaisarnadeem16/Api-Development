@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <input type="button" value="click me" onmouseover="sayhello()">
+     <form name="myform" action="">
+        Enter name: <input type="text" name="customer"/>
+        <input type="button" value="Set Cookie" onclick="WriteCookie();"/>
+        </form>
+
+
+    <script>
+
+        function  sayhello(){
+            document.write("say hello ........")
+        }
+        function WriteCookie()
+{
+ if( document.myform.customer.value == "" ){
+ alert ("Enter some value!");
+ return;
+ }
+ cookievalue= escape(document.myform.customer.value) + ";";
+ document.cookie="name=" + cookievalue;
+ document.write ("Setting Cookies : " + "name=" + cookievalue );
+}
+
+    </script>
+</body>
+</html>
