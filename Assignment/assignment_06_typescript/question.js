@@ -106,4 +106,59 @@ function firstLastNumber() {
     console.log("First number   :" + arr[0]);
     console.log("last number    :" + arr[arr.length - 1]);
 }
-firstLastNumber();
+// firstLastNumber();
+// 12. Write a ts program to find sum of first and last digit of a number.
+function sumofFirstLast(n) {
+    function firstDigit(n) {
+        while (n >= 10)
+            n = n / 10;
+        return Math.floor(n);
+    }
+    function lastDigit(n) {
+        return Math.floor(n % 10);
+    }
+    var sum = firstDigit(n) + lastDigit(n);
+    console.log("sum od first and digit  : " + sum);
+}
+// sumofFirstLast(112387378)
+// 13. Write a ts program to swap first and last digits of a number.
+function swapFirstLast(n) {
+    function firstDigit(n) {
+        while (n >= 10)
+            n = n / 10;
+        return Math.floor(n);
+    }
+    function lastDigit(n) {
+        return Math.floor(n % 10);
+    }
+    var a = firstDigit(n);
+    var b = lastDigit(n);
+    console.log(a, b);
+    var temp;
+    temp = a;
+    a = b;
+    b = temp;
+    console.log(a, b);
+}
+// swapFirstLast(112387378)
+// 14. Write a ts program to calculate sum of digits of a number.
+function sumOfDigits(value) {
+    var sum = 0;
+    while (value) {
+        sum += value % 10;
+        value = Math.floor(value / 10);
+    }
+    console.log(sum);
+}
+// sumOfDigits(346)
+// 15. Write a ts program to calculate product of digits of a number.
+function productOfDigits(value) {
+    var sum = 1;
+    while (value) {
+        sum *= value % 10;
+        value = Math.floor(value / 10);
+    }
+    console.log(sum);
+}
+productOfDigits(3497);
+//  16. Write a ts program to enter a number and print its reverse.
