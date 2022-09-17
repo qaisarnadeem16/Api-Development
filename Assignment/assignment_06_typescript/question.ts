@@ -273,7 +273,7 @@ let frequencyDigit=(n:number)=>{
 let convertToWord=(num:any)=>{
 
     let l = num.length
-
+ 
     if (l == 0){
         console.log("empty string")
         return
@@ -576,7 +576,7 @@ let printArmstrong=(lowerNumber:number,highnumber)=>{
         temp=parseInt(temp/10);
     }
     if(sum==i){
-        console.log("Armstrong Number : " i)
+        console.log("Armstrong Number : "+ i)
     }
 }
 }
@@ -614,8 +614,232 @@ let printPerfect=(lowerNum:number,highNum:number)=>{
             }
         }
         if(sum==i){
-            console.log("perfect Number : " i)
+            console.log("perfect Number : " + i)
         }
     }
 }
-printPerfect(1,10)
+// printPerfect(1,10)
+
+// 34. Write a ts program to check whether a number is Strong number or not.
+
+let isStrong=(num:number)=>{
+
+    let sum=0;
+    let r=0;
+    let temp=num;
+    while(num){
+        let i=1;
+        let fact=1;
+
+        r=num%10;
+        while(i<=r){
+         fact=fact*i;
+         i++
+        }
+        sum=sum+fact;
+        num=Math.floor(num/10)
+    }
+    if(temp==sum){
+        console.log(`${temp} : is a strong Number`)
+    }else{
+        console.log(`${temp} : is a not strong Number`)
+    }
+}
+
+// isStrong(145)
+
+// 35. Write a ts program to print all Strong numbers between 1 to n.
+let printStrong=(lowerNum:number,highNum:number)=>{
+ for(let j=lowerNum; j<highNum; j++){
+    let sum=0;
+    let r=0;
+    let temp=j;
+    while(j){
+        let i=1;
+        let fact=1;
+
+        r=j%10;
+        while(i<=r){
+         fact=fact*i;
+         i++
+        }
+        sum=sum+fact;
+        j=Math.floor(j/10)
+    }
+    if(temp==sum){
+        console.log(`${temp} : is a strong Number`)
+    }
+}
+}
+// printStrong(1,200)
+
+// 36. Write a ts program to print Fibonacci series up to n terms.
+
+let Fibonacci=(Number:number)=>{
+    let n1=0;
+    let n2=1;
+    let nextterm;
+    for(let i=0; i<Number; i++){
+        console.log(n1);
+        nextterm=n1+n2;
+        n1=n2;
+        n2=nextterm
+    }
+}
+// Fibonacci(10)
+
+// 37. Write a ts program to find one's complement of a binary number.
+
+let complementOfBinary=(number)=>{
+    number=number.toString();
+var reverse = number.split('').map(x => x === "0" ? "1" : "0").join('');    
+console.log("Number: " + reverse);
+}
+// complementOfBinary(101010011)
+
+// 39. Write a ts program to convert Binary to Octal number system.
+
+function flip (c) {return (c == '0')? '1': '0';}
+function printOneAndTwosComplement(bin){
+    var n = bin.length;
+    var i;
+ 
+    var ones, twos;
+    ones = twos = "";
+    for (i = 0; i < n; i++)
+        ones += flip(bin[i]);
+    twos = ones;
+    twos = twos.split('')
+    for (i = n - 1; i >= 0; i--)
+    {
+        if (ones[i] == '1')
+            twos[i] = '0';
+        else
+        {
+            twos[i] = '1';
+            break;
+        }
+    }
+    twos = twos.join('')
+    if (i == -1)
+        twos = '1' + twos;
+ 
+ 
+     console.log( "1's complement: " + ones );
+    console.log( "2's complement: " + twos );
+}
+
+// printOneAndTwosComplement(11011);
+
+// 40. Write a ts program to convert Binary to Decimal number system.
+let binaryToDecimal=(binary:any)=>{
+
+var digit = parseInt(binary, 2);
+console.log(digit);
+}
+
+// binaryToDecimal(1010100)
+
+// 41. Write a ts program to convert Binary to Hexadecimal number system.
+
+let binaryToHexa=(binary:any)=>{
+var digit=parseInt(binary,2).toString(16).toUpperCase()
+console.log(digit)
+}
+
+// binaryToHexa(1010)
+
+
+// 42. Write a ts program to convert Octal to Binary number system.
+
+let octTobin=(oct:any)=>{
+    var digit=parseInt(oct,8).toString(2);
+    console.log(digit)
+    }
+// octTobin(540)
+
+// 43. Write a ts program to convert Octal to Decimal number system.
+
+let octTODecimal=(oct:any)=>{
+    var digit=parseInt(oct,8);
+    console.log(digit)
+}
+
+// octTODecimal(140)
+
+// 44. Write a ts program to convert Octal to Hexadecimal number system.
+let octToHexa=(oct:any)=>{
+    var digit=parseInt(oct,8).toString(16).toUpperCase();
+    console.log(digit)
+}
+// octToHexa(5130)
+
+// 45. Write a ts program to convert Decimal to Binary number system.
+
+let decToBin=(decimal:any)=>{
+    let digit=parseInt(decimal,10).toString(2)
+    console.log(digit)
+}
+// decToBin(2233)
+
+// 46. Write a ts program to convert Decimal to Octal number system.
+let decToOct=(decimal:any)=>{
+    let digit=parseInt(decimal,10).toString(8)
+    console.log(digit)
+}
+// decToOct(2233)
+
+// 47. Write a ts program to convert Decimal to Hexadecimal number system.
+let decToHexa=(decimal:any)=>{
+    let digit=parseInt(decimal,10).toString(16).toUpperCase()
+    console.log(digit)
+}
+// decToHexa(828)
+
+// 48. Write a ts program to convert Hexadecimal to Binary number system.
+let hexaToBin=(hexa)=>{
+    let digit=parseInt(hexa, 16).toString(2)
+    console.log(digit)
+}
+
+// hexaToBin('aa64')
+
+// 49. Write a ts program to convert Hexadecimal to Octal number system.
+let hexaToOct=(hexa)=>{
+    let digit=parseInt(hexa, 16).toString(8)
+    console.log(digit)
+}
+
+// hexaToOct('aa64')
+
+// 50. Write a ts program to convert Hexadecimal to Decimal number system.
+let hexaToDec=(hexa)=>{
+    let digit=parseInt(hexa, 16)
+    console.log(digit)
+}
+
+// hexaToDec('aa64')
+
+// 51. Write a ts program to print Pascal triangle upto n rows.
+function generatePascal(n:number){
+    //2D array
+    var arr = [];
+    var tmp;
+    for(var i=0;i<n;i++){
+        //Each element in array is in turn an array
+        // The index is the row number and the array values are the row values
+        arr[i]=[];
+        for(var j=0; j<=i; j++){
+            //If index is last element the value is always 1
+            if(j==i){
+                arr[i].push(1);
+            }else{
+                //The following line adds up the two numbers directly above this element.
+                tmp = (!!arr[i-1][j-1]?arr[i-1][j-1]:0)+(!!arr[i-1][j]?arr[i-1][j]:0);
+                arr[i].push(tmp);
+            }
+        }
+    }
+    console.log(arr);
+}
+generatePascal(1)

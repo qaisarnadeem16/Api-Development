@@ -446,7 +446,7 @@ var printArmstrong = function (lowerNumber, highnumber) {
             temp = parseInt(temp / 10);
         }
         if (sum == i) {
-            console.log("Armstrong Number : ", i);
+            console.log("Armstrong Number : " + i);
         }
     }
 };
@@ -478,8 +478,191 @@ var printPerfect = function (lowerNum, highNum) {
             }
         }
         if (sum == i) {
-            console.log("perfect Number : ", i);
+            console.log("perfect Number : " + i);
         }
     }
 };
-printPerfect(1, 10);
+// printPerfect(1,10)
+// 34. Write a ts program to check whether a number is Strong number or not.
+var isStrong = function (num) {
+    var sum = 0;
+    var r = 0;
+    var temp = num;
+    while (num) {
+        var i = 1;
+        var fact = 1;
+        r = num % 10;
+        while (i <= r) {
+            fact = fact * i;
+            i++;
+        }
+        sum = sum + fact;
+        num = Math.floor(num / 10);
+    }
+    if (temp == sum) {
+        console.log("".concat(temp, " : is a strong Number"));
+    }
+    else {
+        console.log("".concat(temp, " : is a not strong Number"));
+    }
+};
+// isStrong(145)
+// 35. Write a ts program to print all Strong numbers between 1 to n.
+var printStrong = function (lowerNum, highNum) {
+    for (var j = lowerNum; j < highNum; j++) {
+        var sum = 0;
+        var r = 0;
+        var temp = j;
+        while (j) {
+            var i = 1;
+            var fact = 1;
+            r = j % 10;
+            while (i <= r) {
+                fact = fact * i;
+                i++;
+            }
+            sum = sum + fact;
+            j = Math.floor(j / 10);
+        }
+        if (temp == sum) {
+            console.log("".concat(temp, " : is a strong Number"));
+        }
+    }
+};
+// printStrong(1,200)
+// 36. Write a ts program to print Fibonacci series up to n terms.
+var Fibonacci = function (Number) {
+    var n1 = 0;
+    var n2 = 1;
+    var nextterm;
+    for (var i = 0; i < Number; i++) {
+        console.log(n1);
+        nextterm = n1 + n2;
+        n1 = n2;
+        n2 = nextterm;
+    }
+};
+// Fibonacci(10)
+// 37. Write a ts program to find one's complement of a binary number.
+var complementOfBinary = function (number) {
+    number = number.toString();
+    var reverse = number.split('').map(function (x) { return x === "0" ? "1" : "0"; }).join('');
+    console.log("Number: " + reverse);
+};
+// complementOfBinary(101010011)
+// 39. Write a ts program to convert Binary to Octal number system.
+function flip(c) { return (c == '0') ? '1' : '0'; }
+function printOneAndTwosComplement(bin) {
+    var n = bin.length;
+    var i;
+    var ones, twos;
+    ones = twos = "";
+    for (i = 0; i < n; i++)
+        ones += flip(bin[i]);
+    twos = ones;
+    twos = twos.split('');
+    for (i = n - 1; i >= 0; i--) {
+        if (ones[i] == '1')
+            twos[i] = '0';
+        else {
+            twos[i] = '1';
+            break;
+        }
+    }
+    twos = twos.join('');
+    if (i == -1)
+        twos = '1' + twos;
+    console.log("1's complement: " + ones);
+    console.log("2's complement: " + twos);
+}
+// printOneAndTwosComplement(11011);
+// 40. Write a ts program to convert Binary to Decimal number system.
+var binaryToDecimal = function (binary) {
+    var digit = parseInt(binary, 2);
+    console.log(digit);
+};
+// binaryToDecimal(1010100)
+// 41. Write a ts program to convert Binary to Hexadecimal number system.
+var binaryToHexa = function (binary) {
+    var digit = parseInt(binary, 2).toString(16).toUpperCase();
+    console.log(digit);
+};
+// binaryToHexa(1010)
+// 42. Write a ts program to convert Octal to Binary number system.
+var octTobin = function (oct) {
+    var digit = parseInt(oct, 8).toString(2);
+    console.log(digit);
+};
+// octTobin(540)
+// 43. Write a ts program to convert Octal to Decimal number system.
+var octTODecimal = function (oct) {
+    var digit = parseInt(oct, 8);
+    console.log(digit);
+};
+// octTODecimal(140)
+// 44. Write a ts program to convert Octal to Hexadecimal number system.
+var octToHexa = function (oct) {
+    var digit = parseInt(oct, 8).toString(16).toUpperCase();
+    console.log(digit);
+};
+// octToHexa(5130)
+// 45. Write a ts program to convert Decimal to Binary number system.
+var decToBin = function (decimal) {
+    var digit = parseInt(decimal, 10).toString(2);
+    console.log(digit);
+};
+// decToBin(2233)
+// 46. Write a ts program to convert Decimal to Octal number system.
+var decToOct = function (decimal) {
+    var digit = parseInt(decimal, 10).toString(8);
+    console.log(digit);
+};
+// decToOct(2233)
+// 47. Write a ts program to convert Decimal to Hexadecimal number system.
+var decToHexa = function (decimal) {
+    var digit = parseInt(decimal, 10).toString(16).toUpperCase();
+    console.log(digit);
+};
+// decToHexa(828)
+// 48. Write a ts program to convert Hexadecimal to Binary number system.
+var hexaToBin = function (hexa) {
+    var digit = parseInt(hexa, 16).toString(2);
+    console.log(digit);
+};
+// hexaToBin('aa64')
+// 49. Write a ts program to convert Hexadecimal to Octal number system.
+var hexaToOct = function (hexa) {
+    var digit = parseInt(hexa, 16).toString(8);
+    console.log(digit);
+};
+// hexaToOct('aa64')
+// 50. Write a ts program to convert Hexadecimal to Decimal number system.
+var hexaToDec = function (hexa) {
+    var digit = parseInt(hexa, 16);
+    console.log(digit);
+};
+// hexaToDec('aa64')
+// 51. Write a ts program to print Pascal triangle upto n rows.
+function generatePascal(n) {
+    //2D array
+    var arr = [];
+    var tmp;
+    for (var i = 0; i < n; i++) {
+        //Each element in array is in turn an array
+        // The index is the row number and the array values are the row values
+        arr[i] = [];
+        for (var j = 0; j <= i; j++) {
+            //If index is last element the value is always 1
+            if (j == i) {
+                arr[i].push(1);
+            }
+            else {
+                //The following line adds up the two numbers directly above this element.
+                tmp = (!!arr[i - 1][j - 1] ? arr[i - 1][j - 1] : 0) + (!!arr[i - 1][j] ? arr[i - 1][j] : 0);
+                arr[i].push(tmp);
+            }
+        }
+    }
+    console.log(arr);
+}
+generatePascal(1);
