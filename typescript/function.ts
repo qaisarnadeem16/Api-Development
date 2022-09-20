@@ -2,9 +2,9 @@
 
 // to find max and minimum b/w two number;
 
-function checkNum(num1:number ,num2:number ,num3 ?:number ,num4 ?:number ):number{
+function checkNum(num1:number ,num2:number ,num3:number ,num4 ?:number ):any{
 
-   if(num3 !=undefined && num4!=undefined){
+   if( num4!=undefined){
 
     if(num1>num2 && num1>num3 && num1>num4){
         console.log(num1 + " : Num1 is maximum number")      
@@ -19,8 +19,28 @@ function checkNum(num1:number ,num2:number ,num3 ?:number ,num4 ?:number ):numbe
    
 }
 
-checkNum(12,14,24,33)
+// checkNum(12,33,1)
 
+let addnum=(...num:number[])=>{
+    let sum=0;
+    for(let i=1; i<num.length; i++ ){
+        sum=sum+num[i];
+    }
+    console.log(sum)
+
+}
+
+// addnum(1,2)
+
+let factorial=(number:number)=>{
+    if(number<0){
+        return 1
+    }else{
+        return (number*factorial(number-1))
+    }
+};
+
+console.log(factorial(9))
 
 // to find even and odd
 
@@ -32,4 +52,13 @@ function checkEvenOdd(number:number){
     }
 }
 
-checkEvenOdd(32)
+// checkEvenOdd(32)
+
+function disp_details(id:number,name:string,mail_id?:string):any{
+ console.log("ID:", id);
+ console.log("Name",name);
+ if(mail_id!=undefined) 
+ console.log("Email Id",mail_id);
+ }
+// disp_details(123,"John");
+// disp_details(111,"mary","mary@xyz.com");

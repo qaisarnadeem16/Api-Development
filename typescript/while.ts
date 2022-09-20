@@ -10,14 +10,14 @@
 
 // console.log(factorial);
 
-var n:number
- while(n > 5)
- {
- console.log("Entered while")
- }
- do
- {
- console.log("Entered do…while")
- }
- while(n>5)
+// var n:number=6
+//  while(n > 5)
+//  {
+//  console.log("Entered while")
+//  }
+//  do
+//  {
+//  console.log("Entered do…while")
+//  }
+//  while(n>5)
 
