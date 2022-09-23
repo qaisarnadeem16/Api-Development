@@ -40,7 +40,8 @@ let factorial=(number:number)=>{
     }
 };
 
-console.log(factorial(9))
+// console.log(factorial(9))
+ 
 
 // to find even and odd
 
