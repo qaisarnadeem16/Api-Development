@@ -1,5 +1,5 @@
-var str:string="I love Pakistan  "
-var str2:string="I love BWP"
+// var str:string="I love Pakistan  "
+// var str2:string="I love BWP"
 
 // console.log(str.length);
 
@@ -18,15 +18,15 @@ var str2:string="I love BWP"
 // // console.log(str4.replace(re,'orange'));
 // console.log(str4.search(re));
 
-var header:string='Languages';
-var items:string[]=['HTMl','CSS','JS','BS','jquery','php'] 
+// var header:string='Languages';
+// var items:string[]=['HTMl','CSS','JS','BS','jquery','php'] 
 
-let html=`<h2>${header}</h2> <Ul>`
-for(let x of items){
-    html+=`<li>${x}</li>`
-}
-html+= `</ul>`
-var demo=document.getElementById('demo')
-demo.innerHTML=html;
+// let html=`<h2>${header}</h2> <Ul>`
+// for(let x of items){
+//     html+=`<li>${x}</li>`
+// }
+// html+= `</ul>`
+// var demo=document.getElementById('demo')
+// demo.innerHTML=html;
 
 

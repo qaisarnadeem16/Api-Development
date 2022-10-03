@@ -20,5 +20,24 @@ function myReplace(text:string, replaceTo:String , replaceWith:string):string{
 
 
 }
-myReplace("I love Pakistan","love","like")
+// myReplace("I love Pakistan","love","like")
 // myReplace("I love Punjab","love","like")
+
+var ages:number[]=[12,3,12,3,22,11,21]
+ages.forEach(function(a,index){
+  console.log(a);
+  
+})
+// let isBig=(e)=>{
+//   return e>10;
+// }
+// var a=ages.filter(isBig)
+// console.log(a);
+
+//   let b=ages.some(checkage)
+//   console.log(b);
+  
+// function checkage(e){
+//  return e<18;
+
+// }
