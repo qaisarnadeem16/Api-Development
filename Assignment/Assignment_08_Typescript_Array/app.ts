@@ -118,4 +118,138 @@ let printUnique=()=>{
     }
 }
 
-printUnique()
+// printUnique()
+// 13. Write a ts program to count total number of duplicate elements in an array.
+let duplicateCount=()=>{
+    const arr = [5, 5, 5, 2, 2, 2, 2, 2,-2,3,-4,5,-6,-78,8,99, 9, 4];
+    let count=0;
+    for(let i=0; i<arr.length; i++){
+        for(let j=i+1; j<arr.length; j++){
+            if(arr[i]==arr[j]){
+                count++
+                break;
+            }
+        }  
+    }
+    console.log(count);
+}
+// duplicateCount()
+// 14. Write a ts program to delete all duplicate elements from an array.
+let duplicateDel=()=>{
+    const arr:number[] = [5, 5, 5, 2, 2, 2, 2, 2,-2,3,-4,5,-6,-78,8,99, 9, 4];
+     let arr2:number[]=[]
+     arr.forEach((el)=>{
+        if(!arr2.includes(el)){
+            arr2.push(el)
+        }
+     })
+      console.log(arr2);
+}
+// duplicateDel()
+// 15. Write a ts program to merge two array to third array.
+
+let mergeArr=()=>{
+    const arr:number[] = [5, 5, 5, 2, 2, 2, 2, 2,-2,3,- 4];
+    const arr2:number[] = [5-2,3,-4,5,-6,-78,8,99, 9, 4];
+    let arr3=arr.concat(arr2)
+    console.log(arr3)
+}
+// mergeArr()
+// 16. Write a ts program to find reverse of an array.
+let reverseArr=()=>{
+    const arr:number[] = [5, 5, 5, 2, 2, 2, 2, 2,-2,3,- 4];
+    arr.reverse()
+    console.log(arr);
+    
+}
+// reverseArr()
+// 17. Write a ts program to put even and odd elements of array in two separate array.
+
+let sepEvenOdd=()=>{
+    const arr:number[] = [5, 5, 5, 2, 2, 2, 2, 2,-2,3,- 4]; 
+    let even:number[]=[]
+    let odd:number[]=[]
+  for(let i=0; i<arr.length; i++){
+    if(arr[i]%2==0){
+     even.push(arr[i])
+    }else{
+       odd.push(arr[i]) 
+    }
+  }
+  console.log(`Even array ${even}`);
+  console.log(`Odd array ${odd}`);
+  
+}
+// sepEvenOdd()
+// 18. Write a ts program to search an element in an array.
+let searchElement=(element:number)=>{
+    const arr:number[] = [5, 5, 5, 2, 2, 2, 2, 2,-2,3,- 4]; 
+    let e=arr.indexOf(element)
+    if(e>0){
+        console.log(`Element is found`); 
+    }else{
+        {
+            console.log(`Element is Not found`); 
+        }
+    }
+}
+// searchElement(2)
+// 19. Write a ts program to sort array elements in ascending or descending order.
+let sortArr=()=>{
+    const arr:number[] = [5, 5, 5, 1, 2, 0, 2, 2,-2,3,-4,5,-6,-78,8,99, 9, 4];
+    arr.sort()
+    console.log(`Ascending Order of array ${arr}`);
+    arr.reverse()
+    console.log(`escending Order of array ${arr}`);
+    
+}
+// sortArr()
+// 20. Write a ts program to sort even and odd elements of array separately.
+let SepEvenOdd=()=>{
+    const arr:number[] = [5, 5, 5, 2, 2, 2, 2, 2,-2,3,- 4]; 
+    let even:number[]=[]
+    let odd:number[]=[]
+  for(let i=0; i<arr.length; i++){
+    if(arr[i]%2==0){
+     even.push(arr[i])
+    }else{
+       odd.push(arr[i]) 
+    }
+  }
+  console.log(`Even array ${even}`);
+  console.log(`Odd array ${odd}`);
+  
+}
+// SepEvenOdd()
+// 21. Write a ts program to left rotate an array.
+function rotLeft(rotation:number) {
+    const arr:Number[]=[1,2,3,4,5]
+    const rotateArr:Number[]=arr.concat()
+    for(let i=0; i<rotation; i++){
+     const front=rotateArr.shift()
+     rotateArr.push(front)
+
+    }
+   console.log( `Array before Rotation ${arr}`);
+   console.log( `Array After Rotation ${rotateArr}`);
+   
+  }
+  
+  
+//   rotLeft(4)
+// 22. Write a ts program to right rotate an array.
+function rotRight(rotation:number) {
+    const arr:Number[]=[1,2,3,4,5]
+    const rotateArr:Number[]=arr.concat()
+    for(let i=0; i<rotation; i++){
+     const front=rotateArr.pop()
+     rotateArr.unshift(front)
+
+    }
+   console.log( `Array before Rotation ${arr}`);
+   console.log( `Array After Rotation ${rotateArr}`);
+   
+  }
+  
+  
+  rotRight(1)
