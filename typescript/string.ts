@@ -30,3 +30,12 @@
 // demo.innerHTML=html;
 
 
+var str1 = new String( "This is beautiful string" );
+var index = str1.localeCompare( "  ");
+// console.log("localeCompare first :" + index );
+var re = /apples/gi;
+var str = "Apples are round, and apples are juicy.";
+
+99
+var newstr = str.replace(re, "oranges");
+console.log(newstr)
