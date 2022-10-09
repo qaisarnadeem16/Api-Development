@@ -18,7 +18,7 @@ var multi = [[1, 2, 3], [23, 24, 25]];
 for(let i=0; i<multi.length; i++){
     let iL=multi[i].length
     for(let j=0; j<iL; j++){
-        console.log((multi[i][j]).toString());
+        // console.log((multi[i][j]).toString());
         
     }
 }
