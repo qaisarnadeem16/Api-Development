@@ -112,17 +112,88 @@ var cylinder = /** @class */ (function () {
     return cylinder;
 }());
 var cyl = new cylinder(7, 4);
-cyl.vol();
-// let cylinder=(height:number,diameter:number)=>{
-//     this.height=height;
-//     this.diameter=diameter;
-// }
-// cylinder.prototype.volume=function(){
-//     var r:number=this.diameter/2 
-//     var h:number=this.height
-//      let result= h * Math.PI *(r*r);
-//      console.log(result);
-//      return result
-// }
-// let cyl=new cylinder(7,4)
-// console.log(cyl.volume().toFixed(4));
+// cyl.vol()
+// 6. Write a Bubble Sort algorithm in TypeScript.   
+// Note : Bubble sort is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted,
+// Sample Data: [6,4,0, 3,-2,1]
+// Expected Output : [-2, 0, 1, 3, 4, 6]
+var bubbleSort = function () {
+    var Data = [6, 4, 0, 3, -2, 1];
+    for (var i = 0; i < Data.length; i++) {
+        for (var j = 0; j < (Data.length - i - 1); j++) {
+            // console.log(Data[j]);
+            if (Data[j] > Data[j + 1]) {
+                var temp = Data[j];
+                Data[j] = Data[j + 1];
+                Data[j + 1] = temp;
+                console.log(Data);
+            }
+        }
+    }
+    console.log(Data);
+};
+bubbleSort();
+// Write a TypeScript program which returns a subset of a string.
+// Sample Data: dog
+// Expected Output: ["d", "do", "dog", "o", "og", "g"]
+var subSet = function () {
+    var str = "Dog";
+    var arr = [];
+    for (var i = 0; i < str.length; i++) {
+        for (var j = i + 1; j < str.length + 1; j++) {
+            var a = str.slice(i, j);
+            // console.log(a);
+            arr.splice(0, 0, a);
+        }
+    }
+    console.log(arr);
+};
+// subSet()
+// 8. Write a TypeScript program to create a Clock.   
+// Note: The output will come every second.
+// Expected Console Output :
+// "14:37:42"
+// "14:37:43"
+// "14:37:44"
+// "14:37:45"
+// "14:37:46"
+// "14:37:47"
+function Clock() {
+    var time = new Date();
+    var hours = time.getHours().toString();
+    var minutes = time.getMinutes().toString();
+    var seconds = time.getSeconds().toString();
+    if (hours.length < 2) {
+        hours = '0' + hours;
+    }
+    if (minutes.length < 2) {
+        minutes = '0' + minutes;
+    }
+    if (seconds.length < 2) {
+        seconds = '0' + seconds;
+    }
+    var clockStr = hours + ' : ' + minutes + ' : ' + seconds;
+    // clock.textContent = clockStr;
+    console.log(clockStr);
+}
+//   Clock();
+//   setInterval(Clock, 1000);
+// 9. Write a TypeScript program to calculate the area and perimeter of a circle.   
+// Note : Create two methods to calculate the area and perimeter. The radius of the circle will be supplied by the user.
+var circle = /** @class */ (function () {
+    function circle(radius) {
+        this.radius = radius;
+    }
+    circle.prototype.area = function () {
+        var area = 2 * Math.PI * this.radius * this.radius;
+        console.log(area);
+    };
+    circle.prototype.perimeter = function () {
+        var perimeter = 2 * Math.PI * this.radius;
+        console.log(perimeter);
+    };
+    return circle;
+}());
+var cir = new circle(6);
+cir.area();
+cir.perimeter();
