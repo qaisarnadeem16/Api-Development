@@ -132,7 +132,7 @@ var bubbleSort = function () {
     }
     console.log(Data);
 };
-bubbleSort();
+// bubbleSort()
 // Write a TypeScript program which returns a subset of a string.
 // Sample Data: dog
 // Expected Output: ["d", "do", "dog", "o", "og", "g"]
@@ -194,6 +194,141 @@ var circle = /** @class */ (function () {
     };
     return circle;
 }());
-var cir = new circle(6);
-cir.area();
-cir.perimeter();
+// let cir=new circle(6)
+// cir.area()
+// cir.perimeter()
+// 10. Write a TypeScript program to sort an array of TypeScript objects.   
+// Sample Object :
+// var library = [ 
+//    {
+//        title:  'The Road Ahead',
+//        author: 'Bill Gates',
+//        libraryID: 1254
+//    },
+//    {
+//        title: 'Walter Isaacson',
+//        author: 'Steve Jobs',
+//        libraryID: 4264
+//    },
+//    {
+//        title: 'Mockingjay: The Final Book of The Hunger Games',
+//        author: 'Suzanne Collins',
+//        libraryID: 3245
+//    }];
+// Expected Output:
+// [[object Object] {
+//   author: "Walter Isaacson",
+//   libraryID: 4264,
+//   title: "Steve Jobs"
+// }, [object Object] {
+//   author: "Suzanne Collins",
+//   libraryID: 3245,
+//   title: "Mockingjay: The Final Book of The Hunger Games"
+// }, [object Object] {
+//   author: "The Road Ahead",
+//   libraryID: 1254,
+//   title: "Bill Gates"
+// }]
+var books = /** @class */ (function () {
+    function books() {
+    }
+    return books;
+}());
+var library = [
+    {
+        title: 'The Road Ahead',
+        author: 'Bill Gates',
+        libraryID: 1254
+    },
+    {
+        title: 'Walter Isaacson',
+        author: 'Steve Jobs',
+        libraryID: 4264
+    },
+    {
+        title: 'Mockingjay: The Final Book of The Hunger Games',
+        author: 'Suzanne Collins',
+        libraryID: 3245
+    }
+];
+var sortedBooks = library.sort(function (a, b) { return (a.libraryID < b.libraryID) ? 1 : -1; });
+// console.log(sortedBooks);
+// 11. Write a TypeScript function to print all the methods in an TypeScript object.   
+// Test Data :
+// console.log(all_properties(Array));
+// ["length", "name", "arguments", "caller", "prototype", "isArray", "observe", "unobserve"]
+var allMethods = function (obj) {
+    return Object.getOwnPropertyNames(obj).filter(function (pro) { return typeof obj[pro] == "function"; });
+};
+// console.log(allMethods(Array));
+var all_properties = function (obj) {
+    return Object.getOwnPropertyNames(obj);
+};
+// console.log(all_properties(Array));
+// 12. Write a TypeScript function to parse an URL. 
+// 13. Write a TypeScript function to retrieve all the names of object's own and inherited properties.
+var retrieve = function () {
+    var student = {
+        name: "David Rayy",
+        sclass: "VI",
+        rollno: 12
+    };
+    var a = [];
+    for (var x in student) {
+        a = a + student[x] + " ";
+    }
+    console.log(a);
+    console.log(Object.getOwnPropertyNames(student));
+};
+// retrieve();
+// 14. Write a TypeScript function to retrieve all the values of an object's properties.
+var retrieveValue = function () {
+    var student = {
+        name: "David Rayy",
+        sclass: "VI",
+        rollno: 12
+    };
+    var a = [];
+    for (var x in student) {
+        a = a + student[x] + " ";
+    }
+    console.log(a);
+};
+// retrieveValue()
+// 15. Write a TypeScript function to convert an object into a list of `[key, value]` pairs.
+var list = function () {
+    var student = {
+        name: "David Rayy",
+        sclass: "VI",
+        rollno: 12
+    };
+    var result = Object.keys(student).map(function (key) { return [key, student[key]]; });
+    console.log(result);
+    return result;
+};
+// list()
+// 16. Write a TypeScript function to get a copy of the object where the keys have become the values and the values the keys.
+function invert_key_value(obj) {
+    var result = {};
+    var keys = _keys(obj);
+    for (var i = 0, length = keys.length; i < length; i++) {
+        result[obj[keys[i]]] = keys[i];
+    }
+    return result;
+}
+function _keys(obj) {
+    if (!isObject(obj))
+        return [];
+    if (Object.keys)
+        return Object.keys(obj);
+    var keys = [];
+    for (var key in obj)
+        if (_.has(obj, key))
+            keys.push(key);
+    return keys;
+}
+function isObject(obj) {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+}
+console.log(invert_key_value({ red: "#FF0000", green: "#00FF00", white: "#FFFFFF" }));
