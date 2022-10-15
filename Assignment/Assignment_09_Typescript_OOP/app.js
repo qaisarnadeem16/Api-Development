@@ -266,6 +266,11 @@ var all_properties = function (obj) {
 };
 // console.log(all_properties(Array));
 // 12. Write a TypeScript function to parse an URL. 
+var parseUrl = function () {
+    var url = new URL("http://test.example.com/dir/subdir/file.html#hash");
+    console.log((url));
+};
+// parseUrl()
 // 13. Write a TypeScript function to retrieve all the names of object's own and inherited properties.
 var retrieve = function () {
     var student = {
@@ -331,4 +336,14 @@ function isObject(obj) {
     var type = typeof obj;
     return type === 'function' || type === 'object' && !!obj;
 }
-console.log(invert_key_value({ red: "#FF0000", green: "#00FF00", white: "#FFFFFF" }));
+// console.log(invert_key_value({red: "#FF0000", green: "#00FF00", white: "#FFFFFF"}));
+// 17. Write a TypeScript function to check whether an object contains given property
+var checkProperity = function () {
+    var developer = {
+        name: "Jessica Wilkins",
+        country: "United States",
+        isEmployed: true
+    };
+    console.log(developer.hasOwnProperty("name"));
+};
+// checkProperity()
